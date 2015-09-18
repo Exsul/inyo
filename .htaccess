@@ -40,4 +40,4 @@ RewriteRule ^enjs$ phoxy/enjs.php [END,PT,QSA]
 
 # Any request of api folder hooks into rpc file
 RewriteRule ^api/$ api/main/home [QSA]
-RewriteRule ^api/(.*)$ /api.php?REDIRECTIT/$0REDIRECTIT [END,PT,QSA]
+RewriteRule ^api/(.*)$ /apis.php?REDIRECTIT/$0REDIRECTIT [END,PT,QSA]

@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 
 
 include("includes/header.php"); 
@@ -17,12 +17,12 @@ db::Bind(new phpsql\utils\wrapper($pg));
 
 
 
-
-var_dump($_GET);
+//var_dump($_GET);
 function phoxy_conf(){
   $config=phoxy_default_conf();
   $config["api_xss_prevent"]=false;
   $config["api_dir"]="/api";
+  $config['ok'] = 5;
   return $config;
 }
 
@@ -33,7 +33,6 @@ $rpc_string = $arr[1];
 if ($rpc_string == '/api/')
   $rpc_string = '/api/main/Home';
 $_GET['api'] = $rpc_string;
-
 
 
 include 'vendor/phoxy/phoxy/index.php';
