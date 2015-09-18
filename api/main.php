@@ -5,6 +5,13 @@ class main extends api{
     return "Main reserve";
   }
   protected function home(){
-    
+    return
+    [
+      "design" => "body",
+      "data" =>
+      [
+        "id" => 5,
+      ],
+    ];
   }
 }
