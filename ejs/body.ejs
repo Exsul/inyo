@@ -13,29 +13,15 @@ jhshjsh <%@ __this.id %>-->
   <title></title>
 </head>
 <body>
-  <div class="messages">Сообщения тут</div>
-  <div class="contacts_cont">
-    <div class="contact_wrapper">
-    <div class="contact">
-    <p class="contact_name"> Кирилл Березин </p>
-    <img class="contact_photo" src="http://cs629320.vk.me/v629320398/149d0/Ry68lVjHs98.jpg">
-    </div>
-    </div>
-    <div class="contact_wrapper">
-    <div class="contact">
-    <p class="contact_name"> Евгения Берсенёва </p>
-    <img class="contact_photo" src="http://cs629108.vk.me/v629108379/6941/7pFhPdeXJGA.jpg">
-    </div>
-    </div>
-    </div>
-  <div class="containermsg">
-  <form class "msg_form">
-    <input id="message_input" name="Message" type="textarea" value="" size="">
-    <input id="send" name="login"type= "submit" value="Отправить">
-  </form>
+<div class="messages">
+  <% __this.DeferRender('chat',{}) %>
 </div>
-
-
+<div class="contacts_cont">
+  <% __this.DeferRender('contacts', {}) %>
+</div>
+<div class="containermsg">
+  <% __this.DeferRender('input',{}) %>
+</div>
 
 
 </body>
