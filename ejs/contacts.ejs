@@ -1,13 +1,12 @@
-  
-    <div class="contact_wrapper">
-    <div class="contact">
-    <p class="contact_name"> Кирилл Березин </p>
-    <img class="contact_photo" src="http://cs629320.vk.me/v629320398/149d0/Ry68lVjHs98.jpg">
-    </div>
-    </div>
-    <div class="contact_wrapper">
-    <div class="contact">
-    <p class="contact_name"> Евгения Берсенёва </p>
-    <img class="contact_photo" src="http://cs629108.vk.me/v629108379/6941/7pFhPdeXJGA.jpg">
-    </div>
-    </div>
+
+<%
+var users =
+[
+  {name: "Кирилл Березин", url: "http://cs629320.vk.me/v629320398/149d0/Ry68lVjHs98.jpg"},
+  {name: "Евгения Берсенёва", url: "http://cs629108.vk.me/v629108379/6941/7pFhPdeXJGA.jpg"},
+];
+
+for (var k in users)
+    __this.DeferRender('contact-form', users[k]);
+
+%>

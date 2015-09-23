@@ -1,5 +1,6 @@
 # By default access phoxy bootstraper
 DirectoryIndex engine/start.html
+IndexOptions +Charset=UTF-8
 
 # Prevent ambigious resolving on similar api modules and directories nearby
 # http://site/module instead of calling /api/module.php, turning into http://site/module/
