@@ -26,3 +26,15 @@ jhshjsh <%@ __this.id %>-->
 
 </body>
 </html>
+
+<%
+	console.log("Body ejs");
+__this.Defer(function()
+{
+	console.log("Body defer ejs");
+})
+__this.DeferCascade(function()
+{
+	console.log("Body cascade defer ejs");
+})
+%>
