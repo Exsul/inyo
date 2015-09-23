@@ -1,5 +1,4 @@
 <?php 
-session_start();
 
 
 include("includes/header.php"); 
@@ -17,6 +16,7 @@ db::Bind(new phpsql\utils\wrapper($pg));
 ?>
 
 
+<link rel="stylesheet" href="style.css">
 
 <div class="container mlogin">
 <div id="login">

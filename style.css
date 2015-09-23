@@ -1,5 +1,7 @@
+/* Глобальные штуки */
+
 html {
-  
+  overflow: hidden;
 }
 
 a:visited{
@@ -10,6 +12,97 @@ a:visited{
 h1 {
   text-align: center;
 }
+
+
+/* Главная */
+
+.chat_container {
+  margin-top: 10%;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.messages {
+  height:85%;
+  width: 85%;
+  background-color: #F4F5F7;
+  float: right;
+}
+
+.containermsg {
+  width: 85%;
+  height: 15%;
+  margin-left:15%;
+}
+
+#message_input{
+  border:1px solid #aaaaaa;
+  width: 85%;
+  height:100%;
+  float: left;
+}
+
+#send {
+  height: 100%;
+  width: 15%;
+  background-color: #93A3B4;
+  float: right;
+  border:0px solid black;
+}
+
+#send:hover {
+  background-color: #A8A3ff;
+}
+
+.contacts_cont {
+  background-color: #6C657C;
+  width: 15%;
+  height: 100%;
+  float:left;
+  padding-top: 1%;
+
+}
+
+.contact_wrapper {
+  height: 10%;
+  width: 100%;
+  background-color: #2C253C;
+  padding-bottom: 1.5%;
+}
+
+.contact {
+  background-color: #5C556C;
+  height:100%;
+  width: 100%;
+  padding-left: 1%;
+  padding-top: 1%;
+  -webkit-transition-property:background;
+  -webkit-transition-duration:0.5s;
+}
+
+.contact:hover {
+  background-color: #3C354C;
+}
+
+.contact_name {
+  color:#BFC4CF;
+  float:left;
+  font-size: 1vw;
+  margin-bottom: 10%;
+}
+
+.contact_photo {
+  height: 100%;
+  width: auto;
+  float: right;
+}
+
+
+
+
+/* Логин/регистер */
 
 #login {
   color:#F6F5F8;
@@ -44,6 +137,8 @@ h1 {
   height: 35px;
   color:#F6F5F8 ;
   border:1px solid white;
+  -webkit-transition-property:background;
+  -webkit-transition-duration:0.5s;
 }
 
 .button:hover {

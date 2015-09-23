@@ -8,10 +8,7 @@ class main extends api{
     return
     [
       "design" => "body",
-      "data" =>
-      [
-        "id" => 5,
-      ],
+      "data" =>[],
     ];
   }
 }

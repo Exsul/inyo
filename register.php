@@ -17,6 +17,8 @@ db::Bind(new phpsql\utils\wrapper($pg));
 <!-- There was a HOLE here
 It's gone now.-->
 
+<link rel="stylesheet" href="style.css">
+
 
 <div class="container mregister"> 
 <div id="login">
