@@ -1,1 +1,11 @@
-Сообщения тут
+<%
+var messages =
+[
+  {name: "Кирилл Березин", url: "http://cs629320.vk.me/v629320398/149d0/Ry68lVjHs98.jpg", text: "Привет, когда закончишь писать дизайн?"},
+  {name: "Евгения Берсенёва", url: "http://cs629108.vk.me/v629108379/6941/7pFhPdeXJGA.jpg", text: "Привет, встретишь с работы?"},
+];
+
+for (var m in messages)
+    __this.DeferRender('message-form', messages[m]);
+
+%>

@@ -1,11 +1,19 @@
+<div class="ui action input send message field">
+  <input type="text" placeholder="Message" class='input field'>
+  <button class="ui button message">Отправить</button>
+</div>
+
+<% /*
+  if ($('.notification.area .messages.counter').val() >0)
+    $('.input.where.you.write.messages .button').addClass('green');
 
   <form class "msg_form">
     <input id="message_input" name="Message" type="textarea" value="" size="">
-    <input id="send" name="login"type= "submit" value="Отправить">
+    <button class='ui button' id="send" name="login"type= "submit">Отправить</button>
   </form>
+*/ %>
 
 <%
-debugger;
 __this.Defer(function()
 {
   this.first().find('input').val('Привет');

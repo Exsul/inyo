@@ -4,7 +4,6 @@ phoxy =
   sync_cascade: true,
   OnBeforeFirstApiCall: function()
   {
-  	debugger;
   	var old_func = EJS.Canvas.prototype.hook_first;
   	EJS.Canvas.prototype.hook_first = function(a)
   	{
@@ -14,8 +13,9 @@ phoxy =
   }
 }
 </script>
-<script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jshint/2.8.0/jshint.min.js'></script>
+<script src='https://code.jquery.com/jquery-2.1.4.js'></script>
 <script async src='/phoxy/phoxy.js'></script>
 <script async src='//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.min.js'></script>
 <script phoxy='main'></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.0/semantic.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.0/semantic.min.js"></script>

@@ -13,28 +13,18 @@ jhshjsh <%@ __this.id %>-->
   <title></title>
 </head>
 <body>
-<div class="messages">
+<div class="main_field">
+<div class="ui container chat_area">
   <% __this.DeferRender('chat',{}) %>
 </div>
-<div class="contacts_cont">
+<div class=" ui container contacts_area">
   <% __this.DeferRender('contacts', {}) %>
 </div>
-<div class="containermsg">
+<div class="input_area">
   <% __this.DeferRender('input',{}) %>
 </div>
-
+</div>
 
 </body>
 </html>
 
-<%
-	console.log("Body ejs");
-__this.Defer(function()
-{
-	console.log("Body defer ejs");
-})
-__this.DeferCascade(function()
-{
-	console.log("Body cascade defer ejs");
-})
-%>
