@@ -29,10 +29,9 @@ h1 {
   float: right;
 }
 
-.message.block {
-  height: 500px;
-  width: 500px;
-  background-color: black;
+.containerformessages {
+  background-color: #333;
+  vertical-align: bottom;
 }
 
 .input_area {
@@ -64,16 +63,12 @@ h1 {
 }
 
 .contact_wrapper {
-  height: 10%;
-  width: 100%;
   background-color: #2C253C;
   padding-bottom: 1.5%;
 }
 
-.contact {
+.item.contact {
   background-color: #5C556C;
-  height:45px;
-  width: 100%;
   padding-left: 1%;
   padding-top: 1%;
   -webkit-transition-property:background;
