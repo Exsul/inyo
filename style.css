@@ -16,6 +16,11 @@ h1 {
 
 /* Главная */
 
+
+.input.area {
+  width: 85%;
+}
+
 .main_field {
   height:90%;
   width: 98%;
@@ -25,8 +30,7 @@ h1 {
 .ui.container.chat_area {
   height:85%;
   width: 85%;
-  background-color: #F4F5F7;
-  float: right;
+  background-color: #ccc;
 }
 
 .containerformessages {
@@ -50,7 +54,7 @@ h1 {
 }
 
 
-/* Contacts block */
+/* Contacts block 
 
 
 .ui.container.contacts_area {
@@ -92,6 +96,8 @@ h1 {
   width: auto;
   float: right;
 }
+
+*/
 
 
 

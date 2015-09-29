@@ -1,11 +1,3 @@
-<!--<%@ __this.name %>
-<%
-  // JS
-  this.__append("hello");
-%>
-jhshjsh <%@ __this.id %>-->
-
-
 <html>
 <head>
 
@@ -13,16 +5,16 @@ jhshjsh <%@ __this.id %>-->
   <title></title>
 </head>
 <body>
+
+
+
 <div class="main_field">
-<div class="ui container chat_area">
-  <% __this.DeferRender('chat',{}) %>
-</div>
-<div class=" ui container contacts_area">
-  <% __this.DeferRender('contacts', {}) %>
-</div>
-<div class="input_area">
-  <% __this.DeferRender('input',{}) %>
-</div>
+  <div class="input_area">
+    <% __this.DeferRender('inputarea',{}) %>
+  </div>
+  <div class="ui container chat_area">
+    <% __this.DeferRender('chat',{}) %>
+  </div>
 </div>
 
 </body>
