@@ -7,7 +7,7 @@ class main extends api{
   protected function home(){
     return
     [
-      "design" => "body",
+      "design" => "root/body",
       "data" =>[],
     ];
   }
