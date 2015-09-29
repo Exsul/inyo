@@ -42,3 +42,9 @@ RewriteRule ^enjs$ phoxy/enjs.php [END,PT,QSA]
 # Any request of api folder hooks into rpc file
 RewriteRule ^api/$ api/main/home [QSA]
 RewriteRule ^api/(.*)$ /apis.php?REDIRECTIT/$0REDIRECTIT [END,PT,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/ejs [NC]
+RewriteCond %{REQUEST_URI} !^/js [NC]
+RewriteRule ^(.*)$ engine/coldstart.php?url=$1 [END,PT,QSA]
