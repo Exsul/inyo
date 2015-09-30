@@ -1,3 +1,5 @@
+<% __this.DeferRender('quotes/form', {}) %>
+
 <%
 for (var m in __this.quotes)
     __this.DeferRender('quotes/quote', __this.quotes[m]);

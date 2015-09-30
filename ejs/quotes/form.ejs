@@ -1,0 +1,20 @@
+<div class="ui form">
+  <textarea></textarea>
+  <button class="ui button">Отправить цитату</button>
+</div>
+
+<%
+__this.Defer(function()
+{
+
+  __this.first().find('button').click(function()
+  {
+    var text = __this.first().find('input').val();
+
+    phoxy.ApiRequest(['main/submit', text], function()
+    {
+      // OK
+    })
+  })
+})
+%>

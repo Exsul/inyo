@@ -17,4 +17,7 @@ class main extends api{
       ],
     ];
   }
+  protected function submit($text){
+
+  }
 }
