@@ -2,13 +2,19 @@
 
 class main extends api{
   protected function Reserve(){
-    return "Main reserve";
-  }
-  protected function home(){
-    return
-    [
+    return[
       "design" => "root/body",
       "data" =>[],
+    ];
+  }
+  protected function home(){
+    $quotes= db::Query("SELECT * FROM quotes");
+    return[
+      "result" => "hello",
+      "design" => "quotes/start",
+      "data" =>[
+        "quotes" => $quotes,
+      ],
     ];
   }
 }
