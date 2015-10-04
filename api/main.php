@@ -18,6 +18,8 @@ class main extends api{
     ];
   }
   protected function submit($text){
-
+    $sql="INSERT INTO quotes (date,publisher,quote) 
+    VALUES ('now','username','$text')";
+    db::Query($sql);
   }
 }
