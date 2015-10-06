@@ -23,4 +23,15 @@ class main extends api{
     VALUES ($1,$2) returning id";
     return db::Query($sql,[$publisher,$text],true)->id;
   }
+
+  protected function quote($id){
+    $quote= db::Query("SELECT * FROM quotes WHERE id=$1",[$id],true);
+    return[
+      "result" => "hello",
+      "design" => "quotes/quote",
+      "data" => $quote,
+    ];
+  }
+
+
 }

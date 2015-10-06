@@ -12,7 +12,8 @@ for (var m in __this.quotes)
 __this.Defer(function(){
 	var a =	__this.first();
 	a.on("update",function(event,id){
-		debugger;
+		var abc = phoxy.DeferRender(["main/quote",id]);
+		a.find(".quotes.list").prepend(abc);
 	})
 
 })
