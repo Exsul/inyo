@@ -1,19 +1,20 @@
+
 <div class="ui form">
   <textarea class="ui textarea"></textarea>
-  <button class="fluid ui button" type="submit">Отправить цитату</button>
+  <button class="fluid ui button">Отправить цитату</button>
 </div>
 
 <%
 __this.Defer(function()
 {
-
+debugger;
   __this.first().find('button').click(function()
   {
     var text = __this.first().find('textarea').val();
 
-    phoxy.ApiRequest(['main/submit', text], function()
+    phoxy.ApiRequest(['main/submit', text], function(r)
     {
-      // OK
+      console.log(r.data.submit);
     })
   })
 })

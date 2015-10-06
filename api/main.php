@@ -8,7 +8,7 @@ class main extends api{
     ];
   }
   protected function home(){
-    $quotes= db::Query("SELECT * FROM quotes");
+    $quotes= db::Query("SELECT * FROM quotes ORDER BY date DESC");
     return[
       "result" => "hello",
       "design" => "quotes/start",
@@ -18,10 +18,9 @@ class main extends api{
     ];
   }
   protected function submit($text){
-    $date="now";
     $publisher="username";
-    $sql="INSERT INTO quotes (date,publisher,quote) 
-    VALUES ($1,$2,$3)";
-    db::Query($sql,[$date,$publisher,$text],true);
+    $sql="INSERT INTO quotes (publisher,quote) 
+    VALUES ($1,$2) returning id";
+    return db::Query($sql,[$publisher,$text],true)->id;
   }
 }

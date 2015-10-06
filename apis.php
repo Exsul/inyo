@@ -26,6 +26,15 @@ function phoxy_conf(){
   return $config;
 }
 
+function default_addons( $name )
+{
+  $ret =
+  [
+    "cache" => "no",
+  ];
+  return $ret;
+}
+
 $arr = explode('REDIRECTIT', $_SERVER['QUERY_STRING']);
 if (count($arr) != 3)
   die('RPC: Invalid htaccess redirect');
