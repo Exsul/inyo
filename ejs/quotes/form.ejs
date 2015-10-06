@@ -1,5 +1,5 @@
 <div class="ui form">
-  <input class="ui textarea"></input>
+  <textarea class="ui textarea"></textarea>
   <button class="fluid ui button" type="submit">Отправить цитату</button>
 </div>
 
@@ -9,7 +9,7 @@ __this.Defer(function()
 
   __this.first().find('button').click(function()
   {
-    var text = __this.first().find('input').val();
+    var text = __this.first().find('textarea').val();
 
     phoxy.ApiRequest(['main/submit', text], function()
     {
