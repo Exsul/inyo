@@ -1,6 +1,19 @@
+<div class="main quotes">
 <% __this.DeferRender('quotes/form', {}) %>
-
+	<div class="quotes list">
 <%
 for (var m in __this.quotes)
     __this.DeferRender('quotes/quote', __this.quotes[m]);
+%>
+	</div>
+</div>
+
+<% 
+__this.Defer(function(){
+	var a =	__this.first();
+	a.on("update",function(event,id){
+		debugger;
+	})
+
+})
 %>
