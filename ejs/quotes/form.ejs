@@ -13,7 +13,9 @@ __this.Defer(function()
 
     phoxy.ApiRequest(['main/submit', text], function(r)
     {
-      console.log(r.data.submit);
+      if (!r.error)
+      	__this.first().find('textarea').val('');
+
       $(".main.quotes").trigger("update",[r.data.submit]);
     })
   })
