@@ -33,5 +33,12 @@ class main extends api{
     ];
   }
 
+  protected function plus_ratio($id){
+    db::Query("UPDATE quotes SET ratio=ratio+1 WHERE id=$1",[$id],true);
+  }
 
+  protected function minus_ratio($id){
+    db::Query("UPDATE quotes SET ratio=ratio-1 WHERE id=$1",[$id],true);
+
+  }
 }

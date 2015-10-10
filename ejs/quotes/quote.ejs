@@ -14,3 +14,36 @@
     <button class="ui mini negative button">-</button>
   </div>
 </div>
+
+
+
+
+<%
+__this.Defer(function()
+{
+  __this.first().find('.ui.mini.negative.button').click(function()
+  {
+    var id= __this.id
+
+    phoxy.ApiRequest(['main/minus_ratio', id], function(r)
+    {
+      $(".main.minus_ratio").trigger("update",[r.data.ratio]);
+    })
+  })
+})
+%>
+
+<%
+__this.Defer(function()
+{
+  __this.first().find('.ui.mini.positive.button').click(function()
+  {
+    var id=__this.id
+
+    phoxy.ApiRequest(['main/plus_ratio', id], function(r)
+    {
+      $(".main.ratio").trigger("update",[r.data.ratio]);
+    })
+  })
+})
+%>
