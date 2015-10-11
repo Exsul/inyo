@@ -13,8 +13,8 @@ include_once('vendor/enelar/phpsql/wrapper.php');
 $sql = new phpsql();
 $pg = $sql->Connect("pgsql://postgres@localhost/inyo");
 include_once('vendor/enelar/phpsql/db.php');
-db::Bind(new phpsql\utils\wrapper($pg)); 
-
+db::Bind(new phpsql\utils\wrapper($pg));
+include_once('sql/loader.php');
 
 
 //var_dump($_GET);
