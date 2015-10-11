@@ -33,12 +33,7 @@ class main extends api{
     ];
   }
 
-  protected function plus_ratio($id){
-    db::Query("UPDATE quotes SET ratio=ratio+1 WHERE id=$1",[$id],true);
-  }
-
-  protected function minus_ratio($id){
-    db::Query("UPDATE quotes SET ratio=ratio-1 WHERE id=$1",[$id],true);
-
+  protected function vote_ratio($id, $delta){
+    return db::Query("UPDATE quotes SET ratio=ratio+$2 WHERE id=$1 RETURNING ratio",[$id, $delta], true)->ratio;
   }
 }

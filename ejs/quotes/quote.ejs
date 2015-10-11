@@ -3,46 +3,34 @@
     <%@ __this.date %>
   </div>
   <div class="publisher">
-  <%@ __this.publisher %>
+    <%@ __this.publisher %>
   </div>
   <div class="text">
     <%@ __this.quote %>
   </div>
   <div class="ui buttons quote ratio">
     <button class="ui mini positive button">+</button>
-      <div class="or" data-text="<%@ __this.ratio %>"></div>
+      <div class="or value" data-text="<%@ __this.ratio %>"></div>
     <button class="ui mini negative button">-</button>
   </div>
 </div>
 
 
 
-
 <%
 __this.Defer(function()
 {
-  __this.first().find('.ui.mini.negative.button').click(function()
+  __this.first().find('.ratio .button').click(function()
   {
-    var id= __this.id
+    var delta = $(this).hasClass('positive') ? 1 : -1;
+    var id = __this.id
 
-    phoxy.ApiRequest(['main/minus_ratio', id], function(r)
+
+    phoxy.ApiRequest(['main/vote_ratio', id, delta], function(r)
     {
-      $(".main.minus_ratio").trigger("update",[r.data.ratio]);
-    })
-  })
-})
-%>
-
-<%
-__this.Defer(function()
-{
-  __this.first().find('.ui.mini.positive.button').click(function()
-  {
-    var id=__this.id
-
-    phoxy.ApiRequest(['main/plus_ratio', id], function(r)
-    {
-      $(".main.ratio").trigger("update",[r.data.ratio]);
+      __this.first().find('.ratio .value').attr('data-text', r.data.vote_ratio);
+      //debugger;
+      //$(".main.minus_ratio").trigger("update",[r.data.ratio]);
     })
   })
 })
