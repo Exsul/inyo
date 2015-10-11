@@ -77,7 +77,7 @@ class auth extends api
     ];
   }
 
-  private function get_forced_uid()
+  public function register()
   {
     if ($this->get_uid())
       return $this->get_uid();
