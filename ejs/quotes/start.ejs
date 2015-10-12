@@ -1,10 +1,12 @@
 <div class="main quotes">
-<% __this.DeferRender('quotes/form', {}) %>
+  <div class="quote form field">
+    <% __this.DeferRender('quotes/form', {}) %>
+  </div>
 	<div class="quotes list">
-<%
-for (var m in __this.quotes)
-    __this.DeferRender('quotes/quote', __this.quotes[m]);
-%>
+    <%
+    for (var m in __this.quotes)
+        __this.DeferRender('quotes/quote', __this.quotes[m]);
+    %>
 	</div>
 </div>
 

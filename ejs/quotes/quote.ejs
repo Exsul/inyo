@@ -1,20 +1,17 @@
-<div class="ui violet message quote">
-  <div class="publish date">
-    <%@ __this.date %>
+<div class="ui floating message quote">
+  <div class="header top field">
+      <%@ __this.publisher %>
+      <div class="mini ui buttons quote ratio">
+        <button class="ui button negative dislike">-</button>
+          <div class="or value" data-text="<%@ __this.ratio %>"></div>
+        <button class="ui button positive like">+</button>
+      </div>
   </div>
-  <div class="publisher">
-    <%@ __this.publisher %>
-  </div>
-  <div class="text">
+  <div class="date"><%@ __this.date %></div>
+  <div class="ui center aligned segment text">
     <%@ __this.quote %>
   </div>
-  <div class="ui buttons quote ratio">
-    <button class="ui mini positive button">+</button>
-      <div class="or value" data-text="<%@ __this.ratio %>"></div>
-    <button class="ui mini negative button">-</button>
-  </div>
 </div>
-
 
 
 <%
