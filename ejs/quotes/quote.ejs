@@ -1,14 +1,12 @@
 <div class="ui floating message quote">
-  <div class="header top field">
-    <%@ __this.publisher %>
-    <div class="ui tag labels"></div>    
     <div class="mini ui buttons quote ratio">
-      <button class="ui button negative dislike">-</button>
-        <div class="or value" data-text="<%@ __this.ratio %>"></div>
-      <button class="ui button positive like">+</button>
+        <button class="ui button negative dislike">-</button>
+          <div class="or value" data-text="<%@ __this.ratio %>"></div>
+        <button class="ui button positive like">+</button>
     </div>
-  </div>
-  <div class="date"><%@ __this.date %></div>
+    <div class="header publisher"><%@ __this.publisher %></div>
+    <div class="date"><%@ __this.date %></div> 
+    <div class="ui mini teal tag labels"></div> 
   <div class="ui center aligned segment text">
     <%@ __this.quote %>
   </div>
@@ -21,7 +19,7 @@ __this.Defer(function()
   if (tags != null)
     while (index<tags.length) {
     tag = '<a class="ui label tag">' + tags[index] + "</a>";
-    __this.first().find('.header .labels').append(tag);
+    __this.first().find('.labels').append(tag);
     index++;
   }
   })
