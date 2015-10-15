@@ -17,11 +17,11 @@ class main extends api{
       ],
     ];
   }
-  protected function submit($text){
+  protected function submit($text,$tags){
     $publisher="username";
-    $sql="INSERT INTO quotes (publisher,quote) 
-    VALUES ($1,$2) returning id";
-    return db::Query($sql,[$publisher,$text],true)->id;
+    $sql="INSERT INTO quotes (publisher,quote,tags) 
+    VALUES ($1,$2,$3) returning id";
+    return db::Query($sql,[$publisher,$text,$tags],true)->id;
   }
 
   protected function quote($id){

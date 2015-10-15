@@ -1,6 +1,10 @@
 
 <div class="ui form">
-  <textarea class="ui textarea"></textarea>
+  <textarea class="ui textarea" placeholder="Текст цитаты"></textarea>
+  <div class="ui left icon input">
+  <i class="tags icon"></i>
+  <input type="text" placeholder="Теги">
+  </div>
   <button class="fluid ui button">Отправить цитату</button>
 </div>
 
@@ -10,8 +14,9 @@ __this.Defer(function()
   __this.first().find('button').click(function()
   {
     var text = __this.first().find('textarea').val();
+    var tags = __this.first().find('input').val().split(' ');
 
-    phoxy.ApiRequest(['main/submit', text], function(r)
+    phoxy.ApiRequest(['main/submit', text, tags], function(r)
     {
       if (!r.error)
       	__this.first().find('textarea').val('');
