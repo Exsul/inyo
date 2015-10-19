@@ -3,7 +3,7 @@
   <textarea class="ui textarea" placeholder="Текст цитаты"></textarea>
   <div class="ui left icon input">
   <i class="tags icon"></i>
-  <input type="text" placeholder="Теги">
+  <input type="text" placeholder="Теги, через запятую">
   </div>
   <button class="fluid ui button">Отправить цитату</button>
 </div>
@@ -14,7 +14,8 @@ __this.Defer(function()
   __this.first().find('button').click(function()
   {
     var text = __this.first().find('textarea').val();
-    var tags = __this.first().find('input').val().split(' ');
+    var reg = "\s*,\s*"
+    var tags = __this.first().find('input').val().split(reg);
 
     phoxy.ApiRequest(['main/submit', text, tags], function(r)
     {
