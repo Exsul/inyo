@@ -1,0 +1,24 @@
+<div class="mini ui buttons quote ratio">
+        <button class="ui button negative dislike">-</button>
+        <div class="or value" data-text="<%@ __this.ratio %>"></div>
+        <button class="ui button positive like">+</button>
+</div>
+
+
+<%
+__this.Defer(function()
+{
+  __this.first().find('.button').click(function()
+  {
+    var delta = $(this).hasClass('positive') ? 1 : -1;
+    var id = __this.id
+
+
+    phoxy.ApiRequest(['ratio/vote', id, delta], function(r)
+    {
+      __this.first().find('.value').attr('data-text', r.data.vote);
+    })
+  })
+})
+
+%>

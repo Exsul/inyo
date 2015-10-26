@@ -14,10 +14,10 @@ __this.Defer(function()
   __this.first().find('button').click(function()
   {
     var text = __this.first().find('textarea').val();
-    var reg = "\s*,\s*"
+    var reg = "\s*,*\s*"
     var tags = __this.first().find('input').val().split(reg);
 
-    phoxy.ApiRequest(['main/submit', text, tags], function(r)
+    phoxy.AJAX(['main/submit', text, tags], function(r)
     {
       if (!r.error)
       	__this.first().find('textarea').val('');

@@ -1,49 +1,9 @@
 <div class="ui floating message quote">
-    <div class="mini ui buttons quote ratio">
-        <button class="ui button negative dislike">-</button>
-          <div class="or value" data-text="<%@ __this.ratio %>"></div>
-        <button class="ui button positive like">+</button>
-    </div>
+    <% __this.CascadeDesign('quotes/ratio', __this) %>
     <div class="header publisher"><%@ __this.publisher %></div>
     <div class="date"><%@ __this.date %></div> 
-    <div class="ui mini teal tag labels"></div> 
+    <% __this.CascadeDesign('quotes/tags',__this) %>
   <div class="ui center aligned segment text">
     <%@ __this.quote %>
   </div>
 </div>
-
-<!-- tags rendering rule -->
-
-<%
-__this.Defer(function() 
-{
-  var tags = this.tags;
-  var index=0;
-  if (tags != null)
-    while (index<tags.length) {
-    tag = '<a class="ui label tag">' + tags[index] + "</a>";
-    __this.first().find('.labels').append(tag);
-    index++;
-  }
-  })
-%>
-
-<!-- Ratio buttons rule -->
-
-<%
-__this.Defer(function()
-{
-  __this.first().find('.ratio .button').click(function()
-  {
-    var delta = $(this).hasClass('positive') ? 1 : -1;
-    var id = __this.id
-
-
-    phoxy.ApiRequest(['ratio/vote', id, delta], function(r)
-    {
-      __this.first().find('.ratio .value').attr('data-text', r.data.vote);
-    })
-  })
-})
-
-%>

@@ -1,0 +1,27 @@
+<div class="ui mini teal tag labels">
+    
+</div> 
+
+
+<%
+__this.Defer(function()
+{
+  __this.first().click(function()
+  {
+    var theme = $(this).val();
+
+    phoxy.ApiRequest(['tags/search', theme], function(r)
+    {
+      
+    })
+  })
+})
+%>
+
+<!-- tags rendering rule -->
+
+<%
+%>
+
+
+
