@@ -1,0 +1,13 @@
+<%
+function popitup(url)
+{ // http://www.quirksmode.org/js/popup.html
+    newwindow = window.open(url, 'auth',                            'left=300,top=300,height=500,width=700,toolbar=No,location=No,scrollbars=no,status=No,fullscreen=No');
+ if (window.focus)
+     newwindow.focus();
+ return false;
+}
+
+popitup(__this.url);
+%>
+
+

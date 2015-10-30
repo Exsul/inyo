@@ -1,9 +1,15 @@
 <div class="ui mini teal tag labels">
+<% var index = 0;
+while (index < __this.tags.length){ %>
+    <a class="ui label"><%@ __this.tags[index].tag %></a>
+    <% index++} %>
     
 </div> 
 
 
-<%
+
+
+<% 
 __this.Defer(function()
 {
   __this.first().click(function()
@@ -17,11 +23,4 @@ __this.Defer(function()
   })
 })
 %>
-
-<!-- tags rendering rule -->
-
-<%
-%>
-
-
 

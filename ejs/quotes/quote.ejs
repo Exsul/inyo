@@ -2,7 +2,7 @@
     <% __this.CascadeDesign('quotes/ratio', __this) %>
     <div class="header publisher"><%@ __this.publisher %></div>
     <div class="date"><%@ __this.date %></div> 
-    <% __this.CascadeDesign('quotes/tags',__this) %>
+    <% __this.CascadeRequest(['main/rendertags',__this.id]) %>
   <div class="ui center aligned segment text">
     <%@ __this.quote %>
   </div>

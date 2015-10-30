@@ -7,8 +7,10 @@ class main extends api{
       "data" =>[],
     ];
   }
-  protected function home(){
+    protected function home(){
     $quotes= db::Query("SELECT * FROM quotes ORDER BY date DESC");
+    
+    
 
     return[
       "result" => "hello",
@@ -18,7 +20,7 @@ class main extends api{
       ],
     ];
   }
-  protected function submit($text,$tags){
+    protected function submit($text,$tags){
     $publisher="username";
     $sql_quotes="INSERT INTO quotes (publisher,quote) 
     VALUES ($1,$2) returning id";
@@ -32,8 +34,7 @@ class main extends api{
     return $this('api', 'main')->quote($quote_id)->id;
     return $this->quote($quote_id);
   }
-
-  protected function quote($id){
+    protected function quote($id){
     $quote= db::Query("SELECT * FROM quotes WHERE id=$1",[$id],true);
     return[
       "result" => "hello",
@@ -41,4 +42,13 @@ class main extends api{
       "data" => $quote,
     ];
   }
+    protected function rendertags($id){
+        $sql_tags=db::Query("SELECT tag FROM tags WHERE quote_id=$1",[$id]);
+        return [
+            "design" => "quotes/tags",
+            "data" => [
+                "tags" => $sql_tags
+            ],
+        ];
+    }
 }
